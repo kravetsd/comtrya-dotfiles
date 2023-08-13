@@ -4,5 +4,10 @@ actions:
     args:
       - "-sSL"
       - "https://storage.yandexcloud.net/yandexcloud-yc/install.sh"
-      - "|"
-      - "zsh"
+      - "-o"
+      - "{{ user.home_dir }}/yc.sh"
+
+  - action: command.run
+    command: zsh
+    args:
+      - "{{ user.home_dir }}/yc.sh"
