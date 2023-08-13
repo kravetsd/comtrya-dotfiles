@@ -1,0 +1,7 @@
+---
+roles:
+
+  - name: geerlingguy.docker
+    version: 5.1.0
+
+  - name: githubixx.kubectl

@@ -1,0 +1,23 @@
+depends:
+  - ./ansible
+
+actions:
+  - action: file.link
+    from: requirements.yml
+    to: "{{ user.home_dir }}/.requirements.yml"
+
+  - action: file.link
+    from: playbook_roles.yaml
+    to: "{{ user.home_dir }}/playbook_roles.yaml"
+
+  - action: command.run
+    command: ansible-galaxy
+    args:
+      - "install"
+      - "-r"
+      - "{{ user.home_dir }}/.requirements.yml"
+
+  - action: command.run
+    command: ansible-playbook
+    args:
+      - "{{ user.home_dir }}/playbook_roles.yaml"
