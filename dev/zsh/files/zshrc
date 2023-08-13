@@ -1,0 +1,28 @@
+# load zgenom
+source "${HOME}/.zgenom/zgenom.zsh"
+
+if ! zgenom saved; then
+
+  # specify plugins here
+  zgenom ohmyzsh
+
+  # generate the init script from plugins above
+  zgenom save
+
+
+  zgenom ohmyzsh plugins/git
+  zgenom ohmyzsh plugins/sudo  
+  zgenom load zsh-users/zsh-syntax-highlighting
+
+  # completions
+  zgenom load zsh-users/zsh-completions
+
+  # theme
+  zgenom ohmyzsh themes/jonathan
+
+  # save all to init script
+  zgenom save
+
+  # Compile your zsh files
+  zgenom compile "$HOME/.zshrc"    
+fi
