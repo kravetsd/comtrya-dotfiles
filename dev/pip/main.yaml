@@ -1,0 +1,12 @@
+actions:
+  - action: command.run
+    command: curl
+    args:
+      - "https://bootstrap.pypa.io/get-pip.py"
+      - "-o"
+      - "{{ user.home_dir }}/get-pip.py"
+
+  - action: command.run
+    command: python3
+    args:
+      - "{{ user.home_dir }}/get-pip.py"

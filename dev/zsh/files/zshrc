@@ -6,13 +6,12 @@ if ! zgenom saved; then
   # specify plugins here
   zgenom ohmyzsh
 
-  # generate the init script from plugins above
-  zgenom save
-
-
   zgenom ohmyzsh plugins/git
-  zgenom ohmyzsh plugins/sudo  
   zgenom load zsh-users/zsh-syntax-highlighting
+
+  # for file in ~/.zsh/includes/*; do
+  #     zgenom load ${file}
+  # done
 
   # completions
   zgenom load zsh-users/zsh-completions
@@ -24,5 +23,7 @@ if ! zgenom saved; then
   zgenom save
 
   # Compile your zsh files
-  zgenom compile "$HOME/.zshrc"    
+  zgenom compile "$HOME/.zshrc"
 fi
+
+export PATH=~/.local/bin:$PATH

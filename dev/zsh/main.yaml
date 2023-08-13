@@ -1,17 +1,8 @@
 actions:
-
-  - action: command.run
-    command: curl
-    args:
-      - "-fsSL"
-      - "https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh"
-      - "-o"
-      - "ohm-myzsh-install.sh"
-
-  - action: command.run
-    command: sh
-    args:
-      - "ohm-myzsh-install.sh"
+  - action: package.install
+    list:
+      - fzf
+      - zsh
 
   - action: git.clone
     repository: https://github.com/jandamm/zgenom.git
@@ -20,8 +11,3 @@ actions:
   - action: file.link
     from: zshrc
     to: "{{ user.home_dir }}/.zshrc"
-
-  - action: package.install
-    list:
-      - fzf
-      - zsh
