@@ -1,0 +1,8 @@
+actions:
+  - action: command.run
+    command: curl
+    args:
+      - "-sSL"
+      - "https://storage.yandexcloud.net/yandexcloud-yc/install.sh"
+      - "|"
+      - "zsh"
