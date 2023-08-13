@@ -6,8 +6,9 @@ actions:
       - "https://storage.yandexcloud.net/yandexcloud-yc/install.sh"
       - "-o"
       - "{{ user.home_dir }}/yc.sh"
+      - "| zsh"
 
-  - action: command.run
-    command: zsh
-    args:
-      - "{{ user.home_dir }}/yc.sh"
+  # - action: command.run
+  #   command: zsh
+  #   args:
+  #     - "{{ user.home_dir }}/yc.sh"
