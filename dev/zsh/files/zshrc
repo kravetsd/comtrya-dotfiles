@@ -9,9 +9,9 @@ if ! zgenom saved; then
   zgenom ohmyzsh plugins/git
   zgenom load zsh-users/zsh-syntax-highlighting
 
-  # for file in ~/.zsh/includes/*; do
-  #     zgenom load ${file}
-  # done
+  for file in ~/.zsh/includes/*; do
+      zgenom load ${file}
+  done
 
   # completions
   zgenom load zsh-users/zsh-completions
