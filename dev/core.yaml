@@ -1,2 +1,7 @@
 depends:
   - ./zsh
+
+actions:
+  action: package.install
+  list:
+    - git-crypt
